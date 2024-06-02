@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/result_navigation"
+    app:startDestination="@+id/navigation_result">
+
+    <fragment
+        android:id="@+id/navigation_result"
+        android:name="com.bangkit2024.huetiful.ui.fragments.result.ResultFragment"
+        android:label="@string/result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_navigation_result_to_navigation_fulldetail"
+            app:destination="@id/navigation_fulldetail" />
+        <action
+            android:id="@+id/action_navigation_result_to_navigation_detail"
+            app:destination="@id/navigation_detail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_fulldetail"
+        android:name="com.bangkit2024.huetiful.ui.fragments.fulldetail.FullDetailFragment"
+        android:label="FullDetail"
+        tools:layout="@layout/fragment_full_detail" />
+
+    <fragment
+        android:id="@+id/navigation_detail"
+        android:name="com.bangkit2024.huetiful.ui.fragments.detail.DetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_result"
+            app:destination="@id/navigation_result"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_result"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_navigation_detail_to_navigation_fulldetail"
+            app:destination="@id/navigation_fulldetail" />
+    </fragment>
+
+</navigation>
